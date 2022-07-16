@@ -11,16 +11,28 @@ class Car{
         this.acceleration=0.002;
 
         this.maxSpeed=10;
-        // this.friction=0.05;
 
         this.angle=0;
 
         this.controls= new Controls();
+        this.#addKeyboardListeners();
     }
 
     update(){
         this.#move();
     }
+
+
+    #addKeyboardListeners(){
+        document.onkeydown=(event)=>{
+            switch(event.key){
+                case "ArrowUp":
+                    this.acceleration+=0.01;
+                    break;
+            }
+        }
+    }
+
 
     #move(){
         if(this.controls.forward){
