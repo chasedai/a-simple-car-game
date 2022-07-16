@@ -8,10 +8,10 @@ class Car{
 
 
         this.speed=0;
-        this.acceleration=0.01;
+        this.acceleration=0.002;
 
-        this.maxSpeed=3;
-        this.friction=0.05;
+        this.maxSpeed=10;
+        // this.friction=0.05;
 
         this.angle=0;
 
@@ -44,8 +44,8 @@ class Car{
             }
         }
 
-        this.x-=Math.sin(this.angle)*this.speed;
-        this.y-=Math.cos(this.angle)*this.speed;
+        this.x-=Math.sin(this.angle)*this.speed*0.5;
+        this.y-=Math.cos(this.angle)*this.speed*0.5;
 
         // this.y-=this.speed;
     }
